@@ -58,10 +58,10 @@ Using the ngModel directive:
 
 Directives are Instructions in the DOM.
 
-We can define a custom directive.
+We can define a custom directive as follows:
 
 ```html
-<p appTurnGreen> Lorem Impsum </p
+<p appTurnGreen> Receives a green background! </p
 ```
 
 ```typescript
@@ -73,3 +73,27 @@ export class TurnGreenDirective{
 }
 ```
 
+Directives examples:
+
+* *ngIf: Structural directives
+
+```html
+<p *ngIf="variableName"> Server was created! </p>
+```
+
+* ngStyle: Dinamically changes styles of the template
+
+```html
+<p [ngStyle]="{background-color: getColor()}">
+```
+
+* ngClass: Like ngStyle but works with css classes
+
+```html
+<p [ngClass]="{className: serverStatus === 'online'}">
+```
+
+* ngFor
+```html
+<server-app *ngFor="let server of servers"></app-server>
+```
