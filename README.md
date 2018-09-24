@@ -101,3 +101,8 @@ Directives examples:
 ```html
 <server-app *ngFor="let server of servers"></app-server>
 ```
+
+### Debugging
+
+* Chrome Console
+* Augury
