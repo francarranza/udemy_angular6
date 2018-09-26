@@ -106,3 +106,59 @@ Directives examples:
 
 * Chrome Console
 * Augury
+  
+
+
+## Section 5
+
+### Property & Event Binding
+
+These two can be used in:
+
+* HTML Elements: Native Properties & Events
+* Directives: Custom Properties & Events
+* Components: Custom Properties & Events
+
+We can bind a property between two components as follows:
+
+With the decorator @Input(), we are making that variable public to others
+components.
+
+``` ts
+@Input('srvElement') element: {type: string, name: string, content: string};
+```
+
+``` html
+<div class="row">
+    <div class="col-xs-12">
+    <app-server-element 
+    *ngFor="let serverElement of serverElements"
+    [srvElement]="serverElement" ></app-server-element>
+    </div>
+</div>
+
+```
+
+### Custom Events
+parent-child, child-parent communication with EvenEmitter and @Output.
+
+
+Further reading: [@Input](https://toddmotto.com/passing-data-angular-2-components-input), 
+[@Output](https://toddmotto.com/component-events-event-emitter-output-angular-2)
+
+#### Binding to custom Events
+
+> cuak
+
+#### Alias to custom Events
+
+Angular
+```ts
+@Output('aliasName') variable = ...
+```
+
+Template
+```html
+<app-cockpit (aliasName)="onBlueprintAdded($event)">
+</app-cockpit>
+```
